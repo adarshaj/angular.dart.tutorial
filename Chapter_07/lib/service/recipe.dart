@@ -12,7 +12,7 @@ class Recipe {
   Recipe(this.id, this.name, this.category, this.ingredients, this.directions,
       this.rating, this.imgUrl);
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
+  toJson() => {
     "id": id,
     "name": name,
     "category": category,
@@ -22,7 +22,6 @@ class Recipe {
     "imgUrl": imgUrl
   };
 
-  factory Recipe.fromJsonMap(Map<String, dynamic> json) => new Recipe(json['id'], json['name'],
-      json['category'], json['ingredients'], json['directions'], json['rating'],
-      json['imgUrl']);
+  factory Recipe.fromJsonMap(_) => new Recipe(_['id'], _['name'], _['category'],
+      _['ingredients'], _['directions'], _['rating'], _['imgUrl']);
 }
